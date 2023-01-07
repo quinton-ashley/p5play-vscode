@@ -1,0 +1,142 @@
+{
+	"mouse": {
+		"prefix": ["mouse"],
+		"body": ["mouse"],
+		"description": "mouse InputDevice"
+	},
+	"kb": {
+		"prefix": ["kb"],
+		"body": ["kb"],
+		"description": "keyboard InputDevice"
+	},
+	"keyboard": {
+		"prefix": ["keyboard"],
+		"body": ["keyboard"],
+		"description": "keyboard InputDevice"
+	},
+	"contro": {
+		"prefix": ["contro"],
+		"body": ["contro"],
+		"description": "controllers InputDevice array"
+	},
+	"controllers": {
+		"prefix": ["controllers"],
+		"body": ["controllers"],
+		"description": "controllers InputDevice array"
+	},
+	"world": {
+		"prefix": ["world"],
+		"body": ["world"],
+		"description": "World object"
+	},
+	"camera": {
+		"prefix": ["camera"],
+		"body": ["camera"],
+		"description": "default Camera object"
+	},
+	"allSprites": {
+		"prefix": ["allSprites"],
+		"body": ["allSprites"],
+		"description": "allSprites Group"
+	},
+	"frame": {
+		"prefix": ["frame"],
+		"body": ["frame"],
+		"description": "frame count Number"
+	},
+	"Sprite": {
+		"prefix": ["Sprite"],
+		"body": ["Sprite"],
+		"description": "Sprite class"
+	},
+	"createSprite": {
+		"prefix": ["createSprite"],
+		"body": ["createSprite"],
+		"description": "createSprite function"
+	},
+	"Group": {
+		"prefix": ["Group"],
+		"body": ["Group"],
+		"description": "Group class"
+	},
+	"createGroup": {
+		"prefix": ["createGroup"],
+		"body": ["createGroup"],
+		"description": "createGroup function"
+	},
+	"Tiles": {
+		"prefix": ["Tiles"],
+		"body": ["Tiles"],
+		"description": "Tiles class"
+	},
+	"createTiles": {
+		"prefix": ["createTiles"],
+		"body": ["createTiles"],
+		"description": "createTiles function"
+	},
+	"Canvas": {
+		"prefix": ["Canvas"],
+		"body": ["Canvas"],
+		"description": "Canvas class"
+	},
+	"SpriteAnimation": {
+		"prefix": ["SpriteAnimation"],
+		"body": ["SpriteAnimation"],
+		"description": "SpriteAnimation class"
+	},
+	"loadAni": {
+		"prefix": ["loadAni"],
+		"body": ["loadAni"],
+		"description": "loadAnimation function"
+	},
+	"loadAnimation": {
+		"prefix": ["loadAnimation"],
+		"body": ["loadAnimation"],
+		"description": "loadAnimation function"
+	},
+	"animation": {
+		"prefix": ["animation"],
+		"body": ["animation"],
+		"description": "animation function"
+	},
+	"loadImg": {
+		"prefix": ["loadImg"],
+		"body": ["loadImg"],
+		"description": "loadImage function"
+	},
+	"getSpriteAt": {
+		"prefix": "getSpriteAt",
+		"body": ["getSpriteAt"],
+		"description": "getSpriteAt function"
+	},
+	"getSpritesAt": {
+		"prefix": ["getSpritesAt"],
+		"body": ["getSpritesAt"],
+		"description": "getSpritesAt function"
+	},
+	"updateSprites": {
+		"prefix": ["updateSprites"],
+		"body": ["updateSprites"],
+		"description": "updateSprites function"
+	},
+	"spriteArt": {
+		"prefix": ["spriteArt"],
+		"body": ["spriteArt"],
+		"description": "spriteArt function"
+	},
+	"delay": {
+		"prefix": ["delay"],
+		"body": ["delay"],
+		"description": "delay async function"
+	},
+	"sleep": {
+		"prefix": ["sleep"],
+		"body": ["sleep"],
+		"description": "sleep async function"
+	},
+	"play": {
+		"prefix": ["play"],
+		"body": ["play"],
+		"description": "play async function"
+	}
+}
