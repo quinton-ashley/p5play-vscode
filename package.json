@@ -1,0 +1,30 @@
+{
+	"author": {
+		"name": "quinton-ashley",
+		"email": "info@p5play.org"
+	},
+	"name": "p5play-vscode",
+	"displayName": "p5.play VSCode",
+	"description": "p5.play auto-complete for VSCode.",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/js_snippets.code-snippets"
+			}
+		]
+	},
+	"scripts": {
+		"v": "npm version patch --force",
+		"V": "npm version minor --force",
+		"version": "git add -A",
+		"postversion": "git push"
+	},
+	"version": "1.0.1"
+}
