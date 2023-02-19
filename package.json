@@ -5,15 +5,14 @@
 		"email": "info@p5play.org"
 	},
 	"name": "p5play-vscode",
-	"displayName": "p5.play VSCode",
-	"description": "p5.play auto-complete for VSCode.",
+	"displayName": "p5play VSCode",
+	"description": "p5play auto-complete for VSCode.",
 	"keywords": [
-		"p5play",
+		"p5.play",
 		"p5 play",
 		"p5",
 		"p5.js",
-		"p5js",
-		"p5.play"
+		"p5js"
 	],
 	"icon": "icon.png",
 	"license": "GPL-3.0-only",
@@ -41,5 +40,11 @@
 		"version": "git add -A",
 		"postversion": "git push"
 	},
-	"version": "1.1.1"
+	"version": "1.1.2",
+	"__metadata": {
+		"id": "91a3a7ba-83a7-4910-919a-d1c0a8667c67",
+		"publisherDisplayName": "quinton-ashley",
+		"publisherId": "ffc5f242-1f90-4671-802d-b2e0e4616e10",
+		"isPreReleaseVersion": false
+	}
 }

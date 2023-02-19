@@ -39,11 +39,6 @@
 		"body": ["allSprites"],
 		"description": "allSprites Group"
 	},
-	"frame": {
-		"prefix": ["frame"],
-		"body": ["frame"],
-		"description": "frame count Number"
-	},
 	"Sprite": {
 		"prefix": ["Sprite"],
 		"body": ["Sprite"],
@@ -104,21 +99,6 @@
 		"body": ["loadImg"],
 		"description": "loadImage function"
 	},
-	"getSpriteAt": {
-		"prefix": "getSpriteAt",
-		"body": ["getSpriteAt"],
-		"description": "getSpriteAt function"
-	},
-	"getSpritesAt": {
-		"prefix": ["getSpritesAt"],
-		"body": ["getSpritesAt"],
-		"description": "getSpritesAt function"
-	},
-	"updateSprites": {
-		"prefix": ["updateSprites"],
-		"body": ["updateSprites"],
-		"description": "updateSprites function"
-	},
 	"spriteArt": {
 		"prefix": ["spriteArt"],
 		"body": ["spriteArt"],
@@ -128,11 +108,6 @@
 		"prefix": ["delay"],
 		"body": ["delay"],
 		"description": "delay async function"
-	},
-	"sleep": {
-		"prefix": ["sleep"],
-		"body": ["sleep"],
-		"description": "sleep async function"
 	},
 	"play": {
 		"prefix": ["play"],
