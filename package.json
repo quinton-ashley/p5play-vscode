@@ -1,5 +1,5 @@
 {
-	"publisher": "quinton-ashley",
+  "publisher": "quinton-ashley",
 	"author": {
 		"name": "quinton-ashley",
 		"email": "info@p5play.org"
@@ -28,23 +28,50 @@
 				"language": "javascript",
 				"path": "./snippets/js_snippets.code-snippets"
 			}
-		]
+		], "commands": [
+      {
+        "command": "p5play-vscode.setupProject",
+        "title": " p5play: Setup the p5play.js Project"
+      }
+    ]
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/quinton-ashley/p5play-vscode.git"
 	},
-	"scripts": {
-		"v": "npm version patch --force",
-		"V": "npm version minor --force",
-		"version": "git add -A",
-		"postversion": "git push"
-	},
+
 	"version": "1.1.2",
 	"__metadata": {
 		"id": "91a3a7ba-83a7-4910-919a-d1c0a8667c67",
 		"publisherDisplayName": "quinton-ashley",
 		"publisherId": "ffc5f242-1f90-4671-802d-b2e0e4616e10",
 		"isPreReleaseVersion": false
-	}
+	},
+  "activationEvents": [
+    "workspaceContains:sketch.js"
+  ],
+  "main": "./out/extension.js",
+  "extensionPack": [
+    "ritwickdey.liveserver"
+  ],
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.52",
+    "@types/vscode": "^1.68.0",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "^6.8.0",
+    "js-yaml": "^3.14.1",
+    "mocha": "^7.2.0",
+    "typescript": "^4.9.3"
+  }
 }
