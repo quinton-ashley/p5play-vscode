@@ -8,15 +8,15 @@ I made this extension for my students in particular, but I hope it's helpful for
 
 ### To create a new p5play project:
 
-1. Open the Command Palette (with `command-shift-p` on Mac, or `ctrl-shift-p` on Windows) and then start typing and select `Create p5.js Project`. 
+1. Open the Command Palette (with `command-shift-p` on Mac, or `ctrl-shift-p` on Windows) and then start typing and select `p5play: Setup p5play.js Project`. 
 2. Select a new empty folder to put your project in.
 3. (optional) click the "Go Live" button in the bottom status bar to open your sketch in a browser
 
 ## Features
 
-- Creates a p5.js project by populating an empty folder with required html/css/js files.
+- Creates a p5play.js project by populating an empty folder with required html/css/js files.
 - Autocompletion and documentation for p5 keywords & functions using TypeScript definitions.
-- Avoids CDN use so that project creation can work offline.
+- Avoids CDN use so that project creation can work offline.(partially)
 - Comes bundled with other recommended VS Code extensions to make things easier for beginners & students.
 
 ## Troubleshooting
