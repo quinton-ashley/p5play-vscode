@@ -1,77 +1,57 @@
 {
-  "publisher": "quinton-ashley",
+	"publisher": "quinton-ashley",
 	"author": {
 		"name": "quinton-ashley",
 		"email": "info@p5play.org"
 	},
 	"name": "p5play-vscode",
 	"displayName": "p5play VSCode",
-	"description": "p5play auto-complete for VSCode.",
+	"description": "Create new p5play projects!",
 	"keywords": [
 		"p5.play",
+		"game engine",
+		"js game",
+		"javascript game",
 		"p5 play",
 		"p5",
 		"p5.js",
 		"p5js"
 	],
+	"main": "extension.js",
 	"icon": "icon.png",
 	"license": "GPL-3.0-only",
 	"engines": {
 		"vscode": "^1.74.0"
 	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
 	"categories": [
-		"Snippets"
+		"Programming Languages"
 	],
 	"contributes": {
-		"snippets": [
+		"commands": [
 			{
-				"language": "javascript",
-				"path": "./snippets/js_snippets.code-snippets"
+				"command": "p5play-vscode.newProject",
+				"title": "p5play: New Project"
 			}
-		], "commands": [
-      {
-        "command": "p5play-vscode.setupProject",
-        "title": " p5play: Setup the p5play.js Project"
-      }
-    ]
+		]
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/quinton-ashley/p5play-vscode.git"
 	},
-
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"__metadata": {
 		"id": "91a3a7ba-83a7-4910-919a-d1c0a8667c67",
 		"publisherDisplayName": "quinton-ashley",
 		"publisherId": "ffc5f242-1f90-4671-802d-b2e0e4616e10",
 		"isPreReleaseVersion": false
 	},
-  "activationEvents": [
-    "workspaceContains:sketch.js"
-  ],
-  "main": "./out/extension.js",
-  "extensionPack": [
-    "ritwickdey.liveserver"
-  ],
-  "scripts": {
-    "vscode:prepublish": "yarn run compile",
-    "compile": "tsc -p ./",
-    "lint": "eslint src --ext ts",
-    "watch": "tsc -watch -p ./",
-    "pretest": "yarn run compile && yarn run lint",
-    "test": "node ./out/test/runTest.js"
-  },
-  "devDependencies": {
-    "@types/glob": "^7.2.0",
-    "@types/mocha": "^7.0.2",
-    "@types/node": "^13.13.52",
-    "@types/vscode": "^1.68.0",
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "@typescript-eslint/parser": "^2.34.0",
-    "eslint": "^6.8.0",
-    "js-yaml": "^3.14.1",
-    "mocha": "^7.2.0",
-    "typescript": "^4.9.3"
-  }
+	"scripts": {
+		"v": "npm version patch --force",
+		"V": "npm version minor --force",
+		"version": "git add -A",
+		"postversion": "git push"
+	}
 }

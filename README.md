@@ -1,27 +1,15 @@
-# p5play-vscode 
+# p5play-vscode
 
-p5.vscode helps you create p5.js projects in Visual Studio Code. It also includes autocompletion, a simple tool to browse and install third-party p5 libraries, and the `Live Server` extension. 
+Use this extension to easily create a new p5play project in Visual Studio Code.
 
-I made this extension for my students in particular, but I hope it's helpful for anyone using p5. I'm aware there are a few other VS Code extensions that do something similar, but they didn't quite meet my requirements.
+1. Open the Command Palette with "command-shift-p" on macOS (or "ctrl-shift-p" on Windows)
+2. Start typing "p5play" into the Command Palette
+3. Select "p5play: New Project" and press enter
+4. Select an empty folder or create a new folder to put your project in.
+5. Start coding!
 
-## Instructions
+The p5play-template folder contains a basic p5play project that you can run offline.
 
-### To create a new p5play project:
+Install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) Visual Studio Code extension so you can run your project in a web browser. Click "Go Live" in the bottom right corner of Visual Studio Code to start the server.
 
-1. Open the Command Palette (with `command-shift-p` on Mac, or `ctrl-shift-p` on Windows) and then start typing and select `p5play: Setup p5play.js Project`. 
-2. Select a new empty folder to put your project in.
-3. (optional) click the "Go Live" button in the bottom status bar to open your sketch in a browser
-
-## Features
-
-- Creates a p5play.js project by populating an empty folder with required html/css/js files.
-- Autocompletion and documentation for p5 keywords & functions using TypeScript definitions.
-- Avoids CDN use so that project creation can work offline.(partially)
-- Comes bundled with other recommended VS Code extensions to make things easier for beginners & students.
-
-## Troubleshooting
-
-- When creating a new project, please select an empty folder.
-- Library installation requires a project workspace containing an `index.html` file and a `libraries` folder.
-
-Please [log an issue on GitHub](https://github.com//quinton-ashley/p5play-vscode/issues) if you find any problems or have suggestions.
+If you want to keep p5play updated, install [bun](https://bun.sh/) or [npm](https://nodejs.org). Then in the file menu hover over "Terminal" and select "New Terminal". In your p5play project folder run `bun update` or `npm update` to update p5play to the latest version.
