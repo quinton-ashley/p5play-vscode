@@ -7,6 +7,34 @@
 	"name": "p5play-vscode",
 	"displayName": "p5play VSCode",
 	"description": "Create new p5play projects!",
+	"main": "extension.js",
+	"icon": "icon.png",
+	"license": "GPL-3.0-only",
+	"contributes": {
+		"commands": [
+			{
+				"command": "p5play-vscode.newProject",
+				"title": "p5play: New Project"
+			}
+		]
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"categories": [
+		"Extension Packs"
+	],
+	"extensionDependencies": [
+		"ms-vscode.vscode-typescript-next",
+		"ritwickdey.liveserver"
+	],
+	"extensionPack": [
+		"ms-vscode.vscode-typescript-next",
+		"ritwickdey.liveserver"
+	],
+	"engines": {
+		"vscode": "^1.74.0"
+	},
 	"keywords": [
 		"p5.play",
 		"game engine",
@@ -17,31 +45,11 @@
 		"p5.js",
 		"p5js"
 	],
-	"main": "extension.js",
-	"icon": "icon.png",
-	"license": "GPL-3.0-only",
-	"engines": {
-		"vscode": "^1.74.0"
-	},
-	"activationEvents": [
-		"onStartupFinished"
-	],
-	"categories": [
-		"Programming Languages"
-	],
-	"contributes": {
-		"commands": [
-			{
-				"command": "p5play-vscode.newProject",
-				"title": "p5play: New Project"
-			}
-		]
-	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/quinton-ashley/p5play-vscode.git"
 	},
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"__metadata": {
 		"id": "91a3a7ba-83a7-4910-919a-d1c0a8667c67",
 		"publisherDisplayName": "quinton-ashley",
