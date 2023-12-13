@@ -1,7 +1,10 @@
 const vscode = require('vscode');
-
 const Uri = vscode.Uri;
 const vsfs = vscode.workspace.fs;
+
+const log = console.log;
+
+let panel;
 
 async function newProject() {
 	try {
@@ -60,9 +63,56 @@ async function copyDirectory(srcDir, destDir) {
 	}
 }
 
+async function openEditor() {
+	panel = vscode.window.createWebviewPanel(
+        'p5play',
+        'p5play Editor',
+        vscode.ViewColumn.Two,
+        {}
+      );
+
+	const htmlPath = Uri.file(__dirname + '/editor/index.html');
+	let html = await vsfs.readFile(htmlPath);
+	html = Buffer.from(html).toString('utf8');
+
+	function importPath(file, fileToReplace) {
+		const path = Uri.file(__dirname + '/' + file);
+		const src = panel.webview.asWebviewUri(path);
+		html = html.replace(fileToReplace || file, src);
+	}
+
+	importPath('icon.png', '../assets/favicon.png');
+	importPath('icon.png', '../assets/p5play_logo.svg');
+
+	const cssPath = Uri.file(__dirname + '/editor/editor.css');
+	let style = await vsfs.readFile(cssPath);
+	style = Buffer.from(style).toString('utf8');
+
+	const startOfHead = html.indexOf('<head>') + 6;
+	html = html.slice(0, startOfHead) + '<style>' + style + '</style>' + html.slice(startOfHead);
+
+	panel.webview.html = html;
+}
+
+
+
 function activate(context) {
 	let cmd = vscode.commands.registerCommand('p5play-vscode.newProject', newProject);
 	context.subscriptions.push(cmd);
+
+	cmd = vscode.commands.registerCommand('p5play-vscode.openEditor', openEditor);
+	context.subscriptions.push(cmd);
+
+	// TODO: remove this line to disable auto-open
+	vscode.commands.executeCommand('p5play-vscode.openEditor'); // Remove this line to disable auto-open
+
+	const statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 0);
+	statusBar.text = "p5play";
+	statusBar.tooltip = "Edit your p5play project.";
+	statusBar.command = "p5play-vscode.openEditor";
+	statusBar.show();
+
+	context.subscriptions.push(statusBar);
 }
 
 function deactivate() {}
