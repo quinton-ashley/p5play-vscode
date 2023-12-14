@@ -49,7 +49,6 @@ nav {
 	display: flex;
 	align-items: center;
 	padding: 10px;
-	gap: 10px;
 	user-select: none;
 }
 
@@ -57,6 +56,7 @@ nav {
 	background: var(--secondary);
 	overflow-x: scroll;
 	justify-content: center;
+	align-items: center;
 }
 
 #topNav.loaded {
@@ -87,6 +87,8 @@ btn {
 
 #zoneBtns {
 	gap: 10px;
+	display: flex;
+	flex-direction: row;
 }
 
 icon {
@@ -197,6 +199,8 @@ btn.na {
 #logo {
 	width: 48px;
 	height: 48px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .logo-big {
@@ -312,5 +316,5 @@ pre {
 
 #sceneZone {
 	height: 100vh;
-	width: calc(100% - 545px);
+	width: 100%;
 }
