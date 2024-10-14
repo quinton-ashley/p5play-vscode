@@ -1,0 +1,51 @@
+.android {
+	-webkit-mask: url('icons/android.svg') no-repeat;
+}
+
+.app-store-ios {
+	-webkit-mask: url('icons/app-store-ios.svg') no-repeat;
+}
+
+.apple {
+	-webkit-mask: url('icons/apple.svg') no-repeat;
+}
+
+.book-open {
+	-webkit-mask: url('icons/book-open.svg') no-repeat;
+}
+
+.create-new-folder {
+	-webkit-mask: url('icons/create-new-folder.svg') no-repeat;
+}
+
+.display {
+	-webkit-mask: url('icons/display.svg') no-repeat;
+}
+
+.hammer {
+	-webkit-mask: url('icons/hammer.svg') no-repeat;
+}
+
+.play {
+	-webkit-mask: url('icons/play.svg') no-repeat;
+}
+
+#playBtn {
+	background-color: var(--pink);
+}
+
+.stop {
+	-webkit-mask: url('icons/stop.svg') no-repeat;
+}
+
+.folder-open {
+	-webkit-mask: url('icons/folder-open.svg') no-repeat;
+}
+
+.mobile-screen-button {
+	-webkit-mask: url('icons/mobile-screen-button.svg') no-repeat center;
+}
+
+.share-from-square {
+	-webkit-mask: url('icons/share-from-square.svg') no-repeat;
+}

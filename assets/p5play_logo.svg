@@ -2,21 +2,13 @@
 <svg
    version="1.1"
    xmlns="http://www.w3.org/2000/svg"
-   viewBox="0 0 2048 2048">
+   viewBox="0 0 2048 2048" class="p5play_logo">
    <style>
 .p5play_logo_pink {
-   fill:#ff0a52;stroke:#ff0a52;stroke-width:128;stroke-miterlimit:10;
+   fill:oklch(65.72% 0.294 16.7);stroke:oklch(65.72% 0.294 16.7);stroke-width:128;stroke-miterlimit:10;
 }
 .p5play_logo_blue {
-   fill:#b7ebff;stroke:#b7ebff;stroke-width:96;stroke-miterlimit:10;
-}
-@media (color-gamut: p3) {
-   .p5play_logo_pink {
-      fill:oklch(65.72% 0.294 16.7);stroke:oklch(65.72% 0.294 16.7);
-   }
-   .p5play_logo_blue {
-      fill:oklch(90.7% 0.073 218.6);stroke:oklch(90.7% 0.073 218.6);
-   }
+   fill:oklch(90.7% 0.073 218.6);stroke:oklch(90.7% 0.073 218.6);stroke-width:96;stroke-miterlimit:10;
 }
    </style>
 	<path class="p5play_logo_pink"

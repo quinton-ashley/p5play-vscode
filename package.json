@@ -8,7 +8,7 @@
 	"displayName": "p5play VSCode",
 	"description": "Create new p5play projects!",
 	"main": "extension.js",
-	"icon": "icon.png",
+	"icon": "assets/p5play_logo.png",
 	"license": "AGPL-3.0",
 	"contributes": {
 		"commands": [
@@ -44,7 +44,7 @@
 		"type": "git",
 		"url": "https://github.com/quinton-ashley/p5play-vscode.git"
 	},
-	"version": "1.2.7",
+	"version": "1.3.0",
 	"__metadata": {
 		"id": "91a3a7ba-83a7-4910-919a-d1c0a8667c67",
 		"publisherDisplayName": "quinton-ashley",
@@ -55,6 +55,12 @@
 		"v": "npm version patch --force",
 		"V": "npm version minor --force",
 		"version": "git add -A",
-		"postversion": "git push"
+		"postversion": "git push",
+		"build": "vsce package",
+		"publish": "vsce publish"
+	},
+	"dependencies": {
+		"@bitjson/qr-code": "^1.0.2",
+		"live-server": "^1.2.2"
 	}
 }

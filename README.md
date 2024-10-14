@@ -2,20 +2,27 @@
 
 Use this extension to easily create a new p5play project in Visual Studio Code.
 
-1. Open the Command Palette with "command-shift-p" on macOS (or "ctrl-shift-p" on Windows)
-2. Start typing "p5play" into the Command Palette
-3. Select "p5play: New Project" and press enter
-4. Select an empty folder or create a new folder to put your project in.
-5. Start coding!
+1. Open a new window in Visual Studio Code
+2. Find "p5play" in the bottom status bar and click it.
+3. When the p5play sidebar opens, click "Create a new p5play project"
+4. Happy coding!
 
 The p5play-template folder contains a basic p5play project that you can run offline.
 
-Install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) Visual Studio Code extension so you can run your project in a web browser. Click "Go Live" in the bottom right corner of Visual Studio Code to start the server.
+## Command Palette Usage
 
-If you want to keep p5play updated, install [bun](https://bun.sh/) or [npm](https://nodejs.org). Then in the file menu hover over "Terminal" and select "New Terminal". In your p5play project folder run `bun update` or `npm update` to update p5play to the latest version.
+Alternatively, you can use the VSCode command palette, open with `Ctrl+Shift+P` or `Cmd+Shift+P`, and start by typing `p5play`.
+
+Available commands:
+
+- "p5play: New Project"
+
+## Recommendations
+
+Install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) Visual Studio Code extension so you can run your project in a web browser. Click "Go Live" in the bottom right corner of Visual Studio Code to start the server.
 
 ## Development
 
-Install `vsce` to package and publish the extension to the Visual Studio Code Marketplace.
+Run and debug the extensions using Visual Studio Code.
 
-https://code.visualstudio.com/api/working-with-extensions/publishing-extension
+To package the extension, run `vsce package` and then `vsce publish` in the terminal

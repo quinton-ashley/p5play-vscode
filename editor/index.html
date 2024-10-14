@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>p5play editor</title>
-	<link rel="icon" href="../assets/favicon.png" />
-    <link rel="stylesheet" href="editor.css">
+	<title>p5play</title>
+	<link rel="icon" href="../assets/p5play_icon.png" />
+	<link rel="stylesheet" href="editor.css">
+	<link rel="stylesheet" href="icons.css">
 </head>
 
 <body>
-	<div id="sceneZone">
-        <nav id="topNav">
-            <div id="zoneBtns">
-                <btn id="playBtn" title="Play/Stop">
-					<icon class="play"></icon>
-				</btn>
+	<nav id="topNav">
+		<div id="zoneBtns">
+			<btn id="playBtn" title="Play/Reload">
+				<icon class="play"></icon>
+			</btn>
 
-				<btn id="sceneZoneBtn" title="Scene Editor">
+			<!-- <btn id="sceneZoneBtn" title="Scene Editor">
 					<icon class="hammer"></icon>
-				</btn>
+				</btn> -->
 
-				<btn id="fullscreenBtn" title="Fullscreen">
+			<!-- <btn id="fullscreenBtn" title="Fullscreen">
 					<icon class="display"></icon>
-				</btn>
-            </div>
-			<a href="https://p5play.org/learn" class="externalLink">
-				<img id="logo" src="../assets/p5play_logo.svg" slot="icon">
-			</a>
-			<div id="zoneBtns">
-				<btn id="mobileZoneBtn" title="Mobile">
-					<icon class="mobile-screen-button"></icon>
-				</btn>
+				</btn> -->
+		</div>
+		<btn id="logo">
+			<img src="../assets/p5play_logo.svg" slot="icon" draggable="false">
+		</btn>
+		<div id="zoneBtns">
+			<!-- <btn id="newProjectBtn" title="Create a new p5play project">
+					<icon class="create-new-folder"></icon>
+				</btn> -->
 
-				<btn id="learnBtn" title="Learn">
+			<btn id="mobileZoneBtn" title="Mobile">
+				<icon class="mobile-screen-button"></icon>
+			</btn>
+
+			<!-- <btn id="learnBtn" title="Open the Learn p5play interactive textbook">
 					<icon class="book-open"></icon>
-				</btn>
+				</btn> -->
 
-				<btn id="shareZoneBtn" title="Share">
+			<!-- <btn id="shareZoneBtn" title="Share">
 					<icon class="share-from-square"></icon>
-				</btn>
-			</div>
+				</btn> -->
+		</div>
+	</nav>
 
-		<main></main>
+	<div id="newProjectZone" class="zone">
+		<div class="contents">
+			<img id="logo1" class="grayFilter" src="../assets/p5play_logo.svg" slot="icon" draggable="false">
+			<btn id="newProjectBtn" title="Create a new p5play project">
+
+				<icon class="create-new-folder"></icon>
+				<p>Create a new p5play project</p>
+			</btn>
+		</div>
 	</div>
 
+	<div id="mobileZone" class="zone">
+		<div id="qrDiv" class="contents">
+			<img src="../assets/p5play_logo.svg" slot="icon">
+		</div>
+	</div>
+
+	<iframe id="sceneZone" class="zone active" src="http://127.0.0.1:5555/" frameborder="0"></iframe>
 </body>
 
-<!-- <script src="../v3/q5.min.js"></script>
-<script src="../v3/planck.min.js"></script>
-<script src="../v3/p5play.js"></script>
-<script src="editor.js"></script> -->
+<script src="../node_modules/@bitjson/qr-code/dist/qr-code.js"></script>
+<script src="editor.js"></script>
 
 </html>
