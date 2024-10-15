@@ -1,13 +1,36 @@
-# p5play-vscode
+# <img src="assets/p5play_icon.png" height="32px"> p5play-vscode
 
-Use this extension to easily create a new p5play project in Visual Studio Code.
+Use this extension to easily create and run p5play projects in Visual Studio Code.
+
+![p5play-vscode](assets/p5play-vscode.png)
+
+## <img src="editor/icons/create-new-folder.svg" height="24px"> Create a new p5play project
 
 1. Open a new window in Visual Studio Code
 2. Find "p5play" in the bottom status bar and click it.
-3. When the p5play sidebar opens, click "Create a new p5play project"
-4. Happy coding!
+3. When the p5play tab opens, click "Create a new p5play project"
+4. Enter the name of the project and then select the destination folder.
+5. Happy coding! 🎉😃🎮
 
 The p5play-template folder contains a basic p5play project that you can run offline.
+
+## <img src="editor/icons/play.svg" height="24px"> Run your project
+
+If you have a p5play project folder open, simply click "p5play" in the bottom status bar. A live server will start and your project will open inside the tab.
+
+Click the play icon in the nav to re-run your project or save any changes in your project folder.
+
+## <img src="editor/icons/bug-report.svg" height="24px"> Debug
+
+Click the debug icon in the nav to open the VSCode Dev Tools panel, which is just like the one in Chrome.
+
+## <img src="editor/icons/mobile-screen-button.svg" height="24px"> View on Mobile
+
+Click the mobile icon in extension nav to generate a QR code. Scan it with your phone camera's to run your project with your phone's web browser!
+
+## <img src="editor/icons/display.svg" height="24px"> View in Browser
+
+Click the browser icon in the extension nav to open your project in your default web browser.
 
 ## Command Palette Usage
 
@@ -16,10 +39,6 @@ Alternatively, you can use the VSCode command palette, open with `Ctrl+Shift+P` 
 Available commands:
 
 - "p5play: New Project"
-
-## Recommendations
-
-Install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) Visual Studio Code extension so you can run your project in a web browser. Click "Go Live" in the bottom right corner of Visual Studio Code to start the server.
 
 ## Development
 

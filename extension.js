@@ -111,7 +111,7 @@ async function startLiveServer() {
 	vscode.window.showInformationMessage(`Live server started at ${workspaceFolder}`);
 }
 
-async function openEditor() {
+async function openTab() {
 	if (!serverStarted) await startLiveServer();
 
 	panel = vscode.window.createWebviewPanel('p5play', 'p5play', vscode.ViewColumn.Two, {
@@ -148,20 +148,21 @@ async function openEditor() {
 	}
 
 	let svgFiles = [
-		'create-new-folder',
 		// 'android',
-		// 'book-open',
-		// 'google-play',
-		'mobile-screen-button',
-		// 'stop',
 		// 'app-store-ios',
-		// 'display',
-		// 'hammer',
-		'play'
 		// 'apple',
+		// 'book-open',
+		'bug-report',
+		'create-new-folder',
+		'display',
 		// 'folder-open',
+		// 'google-play',
+		// 'hammer',
 		// 'language',
-		// 'share-from-square'
+		'mobile-screen-button',
+		'play'
+		// 'share-from-square',
+		// 'stop'
 	];
 
 	for (const file of svgFiles) {
@@ -184,6 +185,14 @@ window.ipAddress = '${getLocalNetworkIPAddress()}';
 			case 'newProject':
 				await newProject();
 				break;
+			case 'openInBrowser':
+				// open the live server link in the default browser
+				const url = 'http://127.0.0.1:5555';
+				await vscode.env.openExternal(vscode.Uri.parse(url));
+				break;
+			case 'openDevTools':
+				vscode.commands.executeCommand('workbench.action.toggleDevTools');
+				break;
 		}
 	});
 
@@ -203,7 +212,7 @@ function activate(context) {
 	let cmd = vscode.commands.registerCommand('p5play-vscode.newProject', newProject);
 	context.subscriptions.push(cmd);
 
-	cmd = vscode.commands.registerCommand('p5play-vscode.openEditor', openEditor);
+	cmd = vscode.commands.registerCommand('p5play-vscode.openEditor', openTab);
 	context.subscriptions.push(cmd);
 
 	// TODO: remove this line to disable auto-open

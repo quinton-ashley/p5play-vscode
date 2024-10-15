@@ -27,13 +27,23 @@ function activateZone(zone) {
 }
 
 playBtn.addEventListener('click', () => {
+	console.clear();
 	activateZone('sceneZone');
 	document.getElementById('sceneZone').src += '';
+});
+
+debugBtn.addEventListener('click', () => {
+	console.clear();
+	vscode.postMessage({ command: 'openDevTools' });
 });
 
 mobileZoneBtn.addEventListener('click', () => {
 	activateZone('mobileZone');
 	genMobileQRCode();
+});
+
+browserBtn.addEventListener('click', () => {
+	vscode.postMessage({ command: 'openInBrowser' });
 });
 
 // Make topNav draggable

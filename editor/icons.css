@@ -14,6 +14,10 @@
 	-webkit-mask: url('icons/book-open.svg') no-repeat;
 }
 
+.bug-report {
+	-webkit-mask: url('icons/bug-report.svg') no-repeat;
+}
+
 .create-new-folder {
 	-webkit-mask: url('icons/create-new-folder.svg') no-repeat;
 }
