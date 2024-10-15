@@ -4,7 +4,7 @@ Use this extension to easily create and run p5play projects in Visual Studio Cod
 
 ![p5play-vscode](assets/p5play-vscode.png)
 
-## <img src="editor/icons/create-new-folder.svg" height="24px"> Create a new p5play project
+## Create a new p5play project
 
 1. Open a new window in Visual Studio Code
 2. Find "p5play" in the bottom status bar and click it.
@@ -14,21 +14,21 @@ Use this extension to easily create and run p5play projects in Visual Studio Cod
 
 The p5play-template folder contains a basic p5play project that you can run offline.
 
-## <img src="editor/icons/play.svg" height="24px"> Run your project
+## Run your project
 
 If you have a p5play project folder open, simply click "p5play" in the bottom status bar. A live server will start and your project will open inside the tab.
 
 Click the play icon in the nav to re-run your project or save any changes in your project folder.
 
-## <img src="editor/icons/bug-report.svg" height="24px"> Debug
+## Debug
 
 Click the debug icon in the nav to open the VSCode Dev Tools panel, which is just like the one in Chrome.
 
-## <img src="editor/icons/mobile-screen-button.svg" height="24px"> View on Mobile
+## View on Mobile
 
 Click the mobile icon in extension nav to generate a QR code. Scan it with your phone camera's to run your project with your phone's web browser!
 
-## <img src="editor/icons/display.svg" height="24px"> View in Browser
+## View in Browser
 
 Click the browser icon in the extension nav to open your project in your default web browser.
 
