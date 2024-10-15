@@ -216,7 +216,7 @@ function activate(context) {
 	context.subscriptions.push(cmd);
 
 	// TODO: remove this line to disable auto-open
-	vscode.commands.executeCommand('p5play-vscode.openEditor');
+	// vscode.commands.executeCommand('p5play-vscode.openEditor');
 
 	const statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 0);
 	statusBar.text = '$(game) p5play';
