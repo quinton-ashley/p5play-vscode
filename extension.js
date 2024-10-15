@@ -5,19 +5,37 @@ const vsfs = vscode.workspace.fs;
 const os = require('os');
 const liveServer = require('live-server');
 
+let port = 5555;
+
 const log = console.log;
 
 let panel;
 
 function getLocalNetworkIPAddress() {
 	const interfaces = os.networkInterfaces();
-	for (const name of Object.keys(interfaces)) {
-		for (const iface of interfaces[name]) {
+
+	// Prioritize local network Ethernet and Wi-Fi interfaces
+	const preferredInterfaces = ['en0', 'en1', 'en2', 'eth0', 'eth1', 'eth2'];
+
+	for (const connection of preferredInterfaces) {
+		if (interfaces[connection]) {
+			for (const iface of interfaces[connection]) {
+				if (iface.family === 'IPv4' && !iface.internal) {
+					return iface.address;
+				}
+			}
+		}
+	}
+
+	// Fallback to any other active interface
+	for (const connection in interfaces) {
+		for (const iface of interfaces[connection]) {
 			if (iface.family === 'IPv4' && !iface.internal) {
 				return iface.address;
 			}
 		}
 	}
+
 	return '0.0.0.0';
 }
 
@@ -98,17 +116,42 @@ async function startLiveServer() {
 
 	const workspaceFolder = vscode.workspace.workspaceFolders[0].uri.fsPath;
 
-	const params = {
-		port: 5555,
-		root: workspaceFolder,
-		open: false, // don't open in the browser
-		ignore: 'node_modules',
-		file: 'index.html',
-		wait: 0 // wait time before reloading
-	};
+	const maxAttempts = 10; // Maximum number of ports to try
+	let attempts = 0;
 
-	liveServer.start(params);
-	vscode.window.showInformationMessage(`Live server started at ${workspaceFolder}`);
+	function tryStartServer(port) {
+		return new Promise((resolve, reject) => {
+			const params = {
+				port,
+				root: workspaceFolder,
+				open: false, // don't open in the browser
+				ignore: 'node_modules',
+				file: 'index.html',
+				wait: 0 // wait time before reloading
+			};
+
+			liveServer
+				.start(params)
+				.on('listening', () => {
+					resolve(port);
+				})
+				.on('error', (err) => {
+					reject(err);
+				});
+		});
+	}
+
+	while (attempts < maxAttempts) {
+		try {
+			await tryStartServer(port);
+			return;
+		} catch (err) {
+			attempts++;
+			port++;
+		}
+	}
+
+	vscode.window.showErrorMessage('Failed to start live server on any port.');
 }
 
 async function openTab() {
@@ -187,7 +230,7 @@ window.ipAddress = '${getLocalNetworkIPAddress()}';
 				break;
 			case 'openInBrowser':
 				// open the live server link in the default browser
-				const url = 'http://127.0.0.1:5555';
+				const url = 'http://127.0.0.1:' + port;
 				await vscode.env.openExternal(vscode.Uri.parse(url));
 				break;
 			case 'openDevTools':
@@ -196,15 +239,8 @@ window.ipAddress = '${getLocalNetworkIPAddress()}';
 		}
 	});
 
-	if (vscode.workspace.workspaceFolders?.length == 0) {
+	if (!vscode.workspace.workspaceFolders || vscode.workspace.workspaceFolders.length == 0) {
 		panel.webview.postMessage({ command: 'workspaceIsEmpty' });
-
-		// Listen for workspace folder changes
-		vscode.workspace.onDidChangeWorkspaceFolders((event) => {
-			if (vscode.workspace.workspaceFolders?.length > 0) {
-				panel.webview.postMessage({ command: 'workspaceHasFolder' });
-			}
-		});
 	}
 }
 
@@ -215,7 +251,7 @@ function activate(context) {
 	cmd = vscode.commands.registerCommand('p5play-vscode.openEditor', openTab);
 	context.subscriptions.push(cmd);
 
-	// TODO: remove this line to disable auto-open
+	// for testing, remove this line to disable auto-open
 	// vscode.commands.executeCommand('p5play-vscode.openEditor');
 
 	const statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 0);
@@ -227,7 +263,9 @@ function activate(context) {
 	context.subscriptions.push(statusBar);
 }
 
-function deactivate() {}
+function deactivate() {
+	if (panel) panel.dispose();
+}
 
 module.exports = {
 	activate,

@@ -33,7 +33,6 @@ playBtn.addEventListener('click', () => {
 });
 
 debugBtn.addEventListener('click', () => {
-	console.clear();
 	vscode.postMessage({ command: 'openDevTools' });
 });
 
