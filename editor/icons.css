@@ -34,8 +34,8 @@
 	-webkit-mask: url('icons/play.svg') no-repeat;
 }
 
-#playBtn {
-	background-color: var(--pink);
+#playBtn:hover .play {
+	-webkit-mask: url('icons/refresh.svg') no-repeat;
 }
 
 .stop {

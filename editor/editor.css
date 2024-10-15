@@ -128,6 +128,10 @@ btn:hover {
 	scale: 1.05;
 }
 
+btn:hover icon {
+	scale: 1.2;
+}
+
 btn:active {
 	background-color: var(--secondary);
 }
@@ -150,26 +154,38 @@ btn p {
 icon {
 	display: block;
 	background-color: #eee;
-	width: 24px;
-	height: 24px;
-}
-
-#debugBtn {
-	background-color: var(--blue1);
-}
-
-.play {
-	margin-left: 5px;
-	margin-right: -5px;
+	width: 26px;
+	height: 26px;
 }
 
 #playBtn {
 	background-color: var(--pink);
 }
 
-.stop {
+#playBtn .play {
 	margin-left: 4px;
-	width: 21px;
+	margin-right: -4px;
+	width: 22px;
+	height: 22px;
+	transition: 0s;
+}
+
+#playBtn:hover .play {
+	margin: 0;
+	transition: 0.2s;
+}
+
+#debugBtn {
+	background-color: var(--blue1);
+}
+
+.bug-report {
+	width: 28px;
+	height: 28px;
+}
+
+.display {
+	margin-top: 3px;
 }
 
 #logo {
@@ -272,8 +288,8 @@ pre {
 	}
 
 	icon {
-		width: 16px;
-		height: 16px;
+		width: 20px;
+		height: 20px;
 	}
 
 	btn {
@@ -282,10 +298,11 @@ pre {
 		padding-right: 12px;
 	}
 
-	.play {
+	#playBtn .play {
 		margin-left: 2px;
 		margin-right: -2px;
 		width: 16px;
+		height: 16px;
 	}
 
 	#zoneBtns {

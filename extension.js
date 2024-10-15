@@ -110,7 +110,6 @@ let serverStarted = false;
 
 async function startLiveServer() {
 	if (!vscode.workspace.workspaceFolders || vscode.workspace.workspaceFolders.length === 0) {
-		vscode.window.showErrorMessage('No workspace folder is open.');
 		return;
 	}
 
@@ -203,9 +202,10 @@ async function openTab() {
 		// 'hammer',
 		// 'language',
 		'mobile-screen-button',
-		'play'
+		'play',
 		// 'share-from-square',
 		// 'stop'
+		'refresh'
 	];
 
 	for (const file of svgFiles) {
@@ -265,6 +265,7 @@ function activate(context) {
 
 function deactivate() {
 	if (panel) panel.dispose();
+	if (serverStarted) liveServer.shutdown();
 }
 
 module.exports = {
