@@ -14,8 +14,8 @@ let panel;
 function getLocalNetworkIPAddress() {
 	const interfaces = os.networkInterfaces();
 
-	// Prioritize local network Ethernet and Wi-Fi interfaces
-	const preferredInterfaces = ['en0', 'en1', 'en2', 'eth0', 'eth1', 'eth2'];
+	// Prioritize local network Wi-Fi interfaces
+	const preferredInterfaces = ['en0', 'en1', 'en2', 'eth0', 'eth1', 'eth2', 'Wi-Fi', 'Wi-Fi 2', 'Wi-Fi 3'];
 
 	for (const connection of preferredInterfaces) {
 		if (interfaces[connection]) {
